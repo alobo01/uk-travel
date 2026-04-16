@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Guía Turística Londres y Oxford</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 794px;
+            height: 1123px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0D1A2B 0%, #1C3A5E 50%, #2C5282 100%);
+            font-family: 'EB Garamond', Georgia, serif;
+            color: #F0EDE6;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Patrón decorativo sutil */
+        .pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image:
+                radial-gradient(circle at 25% 25%, #fff 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, #fff 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Línea dorada superior */
+        .top-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #C9A227, #F4D03F, #C9A227);
+        }
+
+        /* Imagen de fondo */
+        .hero-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 65%;
+            height: 70%;
+            background: linear-gradient(180deg, rgba(13,26,43,0.3) 0%, rgba(13,26,43,0.9) 100%),
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Millennium_Bridge_and_St_Paul%27s.jpg/1280px-Millennium_Bridge_and_St_Paul%27s.jpg');
+            background-size: cover;
+            background-position: center;
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%);
+        }
+
+        /* Contenido de texto */
+        .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        /* Título principal */
+        .title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .title-accent {
+            color: #C9A227;
+        }
+
+        .subtitle {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 28px;
+            font-style: italic;
+            font-weight: 400;
+            color: #B8C5D6;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        /* Línea decorativa */
+        .divider {
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, #C9A227, transparent);
+            margin-bottom: 25px;
+        }
+
+        /* Información del viaje */
+        .info-box {
+            background: rgba(28, 58, 94, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 20px 25px;
+            border-left: 4px solid #C9A227;
+            margin-bottom: 20px;
+        }
+
+        .info-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #C9A227;
+            margin-bottom: 8px;
+        }
+
+        .info-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #E8E8E8;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            text-align: right;
+        }
+
+        .author {
+            font-size: 12px;
+            color: #8899AA;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #C9A227;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Elemento decorativo esquina */
+        .corner-decor {
+            position: absolute;
+            bottom: 30px;
+            left: 60px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .flag-icon {
+            width: 40px;
+            height: 24px;
+            background: linear-gradient(180deg, #012169 33%, #fff 33%, #fff 66%, #C8102E 66%);
+        }
+
+        .flag-icon::before {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 10px;
+            background: #C8102E;
+            transform: translate(13px, 7px) rotate(0deg);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .travel-text {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #7A8A9A;
+        }
+
+        /* Pequeño mapa decorativo */
+        .map-indicator {
+            position: absolute;
+            top: 100px;
+            right: 80px;
+            width: 200px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 4px;
+        }
+
+        .map-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #C9A227;
+            margin-bottom: 8px;
+        }
+
+        .map-routes {
+            font-size: 12px;
+            color: #B8C5D6;
+            line-height: 1.8;
+        }
+
+        .map-routes span {
+            color: #F4D03F;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Patrón decorativo -->
+        <div class="pattern"></div>
+
+        <!-- Línea dorada superior -->
+        <div class="top-line"></div>
+
+        <!-- Imagen hero -->
+        <div class="hero-image"></div>
+
+        <!-- Indicador de rutas -->
+        <div class="map-indicator">
+            <div class="map-title">Itinerario</div>
+            <div class="map-routes">
+                <span>Día 1:</span> Ruta Central<br>
+                <span>Día 2:</span> Notting Hill<br>
+                <span>Día 3:</span> Museos<br>
+                <span>Días 4-6:</span> Oxford
+            </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <div class="title">
+                <span class="title-accent">LONDRES</span><br>
+                & OXFORD
+            </div>
+            <div class="subtitle">Guía Turística Completa · 6 Días</div>
+
+            <div class="divider"></div>
+
+            <div class="info-box">
+                <div class="info-title">Tu Viaje</div>
+                <div class="info-text">
+                    18-23 de Abril 2026 · Victoria Station → Tower of London → Oxford<br>
+                    Willis Rd House No 1, London E15 3HH
+                </div>
+            </div>
+        </div>
+
+        <!-- Decoración esquina -->
+        <div class="corner-decor">
+            <div class="flag-icon"></div>
+            <div class="travel-text">Reino Unido · Great Britain</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="author">Preparado por MiniMax Agent</div>
+            <div class="date">Abril 2026</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Turística Londres y Oxford - Abril 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --royal-blue: #1C3A5E;
+            --gold: #C9A227;
+            --cream: #F8F6F1;
+            --dark-text: #1A1A2E;
+            --light-text: #6B7280;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--cream);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Cover Page */
+        .cover {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #2C5282 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.03) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .cover-gold-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--gold), #F4D03F, var(--gold));
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .cover-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .cover-title span {
+            color: var(--gold);
+        }
+
+        .cover-dates {
+            font-size: 24px;
+            font-style: italic;
+            color: rgba(255,255,255,0.8);
+            margin: 20px 0 40px;
+        }
+
+        .cover-divider {
+            width: 120px;
+            height: 3px;
+            background: var(--gold);
+            margin: 30px auto;
+        }
+
+        .cover-route {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 50px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .cover-route p {
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .cover-author {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .cover-author-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 8px;
+        }
+
+        .cover-author-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--gold);
+        }
+
+        .cover-family {
+            font-size: 16px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 10px;
+        }
+
+        /* Page Container */
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            background: white;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--royal-blue);
+            margin-bottom: 40px;
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--royal-blue);
+        }
+
+        .header-subtitle {
+            font-size: 12px;
+            color: var(--light-text);
+        }
+
+        .page-number {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--royal-blue);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .subsection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--royal-blue);
+            margin: 30px 0 20px;
+        }
+
+        .subsection-subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin: 20px 0 15px;
+            padding-left: 15px;
+            border-left: 4px solid var(--gold);
+        }
+
+        /* Paragraphs */
+        .intro-text {
+            font-size: 16px;
+            color: var(--dark-text);
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .body-text {
+            font-size: 15px;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Timeline/Route */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gold);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--cream);
+            border-radius: 8px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--gold);
+        }
+
+        .timeline-time {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--royal-blue);
+            margin-bottom: 10px;
+        }
+
+        .timeline-distance {
+            font-size: 13px;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            font-size: 14px;
+            color: var(--dark-text);
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .info-card {
+            background: var(--cream);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--royal-blue);
+        }
+
+        .info-card-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--royal-blue);
+            margin-bottom: 10px;
+        }
+
+        .info-card-content {
+            font-size: 15px;
+            color: var(--dark-text);
+        }
+
+        /* Fun Facts */
+        .fun-facts {
+            background: linear-gradient(135deg, #E8EDF3 0%, #F8F6F1 100%);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .fun-facts-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .fun-facts ul {
+            list-style: none;
+        }
+
+        .fun-facts li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .fun-facts li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--royal-blue);
+        }
+
+        /* Images */
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            font-size: 13px;
+            color: var(--light-text);
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Maps */
+        .map-container {
+            background: var(--cream);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .map-container img {
+            max-width: 100%;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .data-table th {
+            background: var(--royal-blue);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .data-table tr:hover {
+            background: #E8EDF3;
+        }
+
+        /* Pubs Section */
+        .pubs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .pub-card {
+            background: var(--cream);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid var(--gold);
+        }
+
+        .pub-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--royal-blue);
+            margin-bottom: 8px;
+        }
+
+        .pub-location {
+            font-size: 13px;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .pub-description {
+            font-size: 14px;
+            color: var(--dark-text);
+        }
+
+        /* Callout */
+        .callout {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, #2C5282 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .callout-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .callout-content {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Events */
+        .event-card {
+            background: var(--cream);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .event-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--royal-blue);
+            margin-bottom: 10px;
+        }
+
+        .event-details {
+            font-size: 14px;
+            color: var(--dark-text);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: var(--light-text);
+        }
+
+        /* Print Styles */
+        @media print {
+            .page {
+                padding: 30px;
+            }
+            .cover {
+                min-height: 100vh;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .info-grid, .pubs-grid {
+                grid-template-columns: 1fr;
+            }
+            .cover-title {
+                font-size: 48px;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mt-20 { margin-top: 20px; }
+        .mb-20 { margin-bottom: 20px; }
+        .bold { font-weight: 700; }
+        .gold { color: var(--gold); }
+        .blue { color: var(--royal-blue); }
+    </style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+    <div class="cover-gold-line"></div>
+
+    <div class="cover-content">
+        <div class="cover-subtitle">Guía Turística Completa</div>
+
+        <h1 class="cover-title">
+            LONDRES <span>&</span> OXFORD
+        </h1>
+
+        <p class="cover-dates">18 - 23 de Abril 2026</p>
+
+        <div class="cover-divider"></div>
+
+        <div class="cover-route">
+            <p>🇬🇧 Reino Unido · Great Britain</p>
+            <p>Victoria Station → Tower of London → Oxford</p>
+            <p class="mt-20">Hotel: Willis Rd House No 1, London E15 3HH</p>
+        </div>
+    </div>
+
+    <div class="cover-author">
+        <div class="cover-author-label">Autor</div>
+        <div class="cover-author-name">Antonio Lobo Santos</div>
+        <div class="cover-family">Viaje de la Familia Lobo Santos</div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Bienvenidos a Londres</div>
+            <div class="header-subtitle">La Ciudad Eterna del Támesis</div>
+        </div>
+        <div class="page-number">Página 2</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Una Breve Historia de Londres</h2>
+
+        <div class="image-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Trafalgar_Square%2C_London_2_-_Jun_2009.jpg" alt="Trafalgar Square">
+            <p class="image-caption">Trafalgar Square, el corazón de Londres desde 1830</p>
+        </div>
+
+        <p class="intro-text">
+            Londres, la capital del Reino Unido, es una ciudad que ha cautivado a viajeros durante siglos.
+            Con más de 2,000 años de historia, desde sus orígenes romanos hasta convertirse en una metrópolis global,
+            Londres es un museo al aire libre donde cada calle cuenta una historia.
+        </p>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">🏛️ Orígenes Romanos (43 d.C.)</div>
+                <div class="info-card-content">
+                    Londinium fue fundada por los romanos alrededor del año 43 d.C. Eligieron este lugar estratégicamente:
+                    un risco natural sobre el Támesis que permitía controlar el tráfico fluvial y las rutas comerciales.
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">⚔️ Era Medieval (1066-1485)</div>
+                <div class="info-card-content">
+                    Tras la conquista normanda, Guillermo el Conquistador construyó la Torre de Londres para vigilar a los nuevos súbditos.
+                    Westminster se consolidó como sede del poder político.
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">🔥 El Gran Incendio (1666)</div>
+                <div class="info-card-content">
+                    El Gran Incendio destruyó el 80% de la ciudad vieja. Sir Christopher Wren diseñó 52 iglesias nuevas,
+                    incluyendo la Catedral de San Pablo.
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">👑 Era Victoriana (1837-1901)</div>
+                <div class="info-card-content">
+                    Bajo la Reina Victoria, Londres se convirtió en el centro del Imperio Británico más grande de la historia.
+                    El metro, los grandes almacenes y monumentos como el Big Ben definen la imagen victoriana.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Tu Viaje: 18-23 de Abril 2026</h2>
+
+        <div class="callout">
+            <div class="callout-title">📅 Itinerario General</div>
+            <div class="callout-content">
+                <strong>Sábado 18:</strong> Llegada a Londres, recorrido por el centro histórico<br>
+                <strong>Domingo 19:</strong> Notting Hill, Portobello Market y Camden Town<br>
+                <strong>Lunes 20:</strong> Museos y tren a Oxford<br>
+                <strong>Martes 21 - Jueves 23:</strong> Explorando Oxford y sus colleges
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Sábado 18 de Abril</div>
+            <div class="header-subtitle">El Gran Recorrido a Pie</div>
+        </div>
+        <div class="page-number">Página 3</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🗺️ Ruta del Centro Histórico</h2>
+
+        <div class="map-container">
+            <img src="/workspace/london_oxford_guide/images/ruta_sabado.png" alt="Mapa de la ruta del sábado">
+            <p class="image-caption">Ruta completa: Victoria Station → Tower of London</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">🕙 10:30 AM - 11:15 AM</div>
+                <div class="timeline-title">Wetherspoon Victoria Station</div>
+                <div class="timeline-description">
+                    Desayuno en el clásico Wetherspoon bajo los arcos de la estación. Perfecto para empezar el día con energía
+                    antes de la caminata. Precio medio: £6-10 por persona.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 11:15 - 11:30 AM · 15 min · 1.0 km</div>
+                <div class="timeline-title">Buckingham Palace</div>
+                <div class="timeline-description">
+                    La residencia oficial del monarca británico desde 1837. <strong>775 habitaciones</strong> - más que cualquier otra
+                    residencia privada del mundo. La ceremonia del Cambio de la Guardia es a las 11:00 AM (diaria hasta julio).
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 11:30 - 11:35 AM · 5 min</div>
+                <div class="timeline-title">St James's Park</div>
+                <div class="timeline-description">
+                    El parque real más antiguo de Londres (desde 1536). Los <strong>pelícanos</strong> llevan aquí desde 1664,
+                    cuando el zar ruso Pedro el Grande los regaló al Rey Carlos II.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 11:35 - 11:55 AM · 20 min</div>
+                <div class="timeline-title">Westminster Abbey</div>
+                <div class="timeline-description">
+                    Todos los monarcas ingleses han sido coronados aquí desde 1066. El <strong>Rincón del Poeta</strong> alberga
+                    las tumbas de Chaucer, Dickens y más de 100 escritores.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 12:00 PM · 5 min</div>
+                <div class="timeline-title">Big Ben y Palacio de Westminster</div>
+                <div class="timeline-description">
+                    <strong>Big Ben</strong> es en realidad el nombre de la campana (13.5 toneladas). La torre se llama
+                    <strong>Elizabeth Tower</strong> desde 2012 en honor a la Reina.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 12:10 PM · 10 min</div>
+                <div class="timeline-title">Trafalgar Square</div>
+                <div class="timeline-description">
+                    El corazón de Londres. La columna de Nelson mide 52 metros y fue construida con los cañones
+                    capturados en la Batalla de Trafalgar (1805).
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 12:15 PM · 5 min</div>
+                <div class="timeline-title">Piccadilly Circus</div>
+                <div class="timeline-description">
+                    Las icónicas pantallas de neón aparecieron en 1923 y fueron las primeras del mundo. La pantalla
+                    izquierda superior está reservada para mensajes del gobierno.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 12:20 PM · 5 min</div>
+                <div class="timeline-title">Chinatown</div>
+                <div class="timeline-description">
+                    Más de <strong>80 restaurantes</strong> chinos. Las puertas de祈福 (bendición) fueron un regalo de
+                    Jiangsu en 1987. El restaurante más antiguo es Wong Kei (desde 1920).
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 12:23 PM · 3 min</div>
+                <div class="timeline-title">Leicester Square</div>
+                <div class="timeline-description">
+                    El cine <strong>Odeon Leicester Square</strong> es sede de premieres de Hollywood. Shakespeare's Globe
+                    Theatre fue fundado aquí en los años 70.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 12:30 PM · 8 min</div>
+                <div class="timeline-title">Covent Garden</div>
+                <div class="timeline-description">
+                    Originalmente era un "convent garden" (huerto de convento). Los artistas callejeros actuaron por
+                    primera vez aquí en 1973 y hoy son una tradición protegida.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="header">
+        <div>
+            <div class="header-title">Continuación de la Ruta</div>
+            <div class="header-subtitle">Hacia el East End</div>
+        </div>
+        <div class="page-number">Página 4</div>
+    </div>
+
+    <div class="section">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 1:00 PM · 25 min · 1.8 km</div>
+                <div class="timeline-title">St Paul's Cathedral</div>
+                <div class="timeline-description">
+                    La cúpula mide 111 metros y es la segunda más grande del mundo tras la de San Pedro en Roma.
+                    Fue la primera catedral protestante construida en Europa tras la Reforma.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 1:10 PM · 10 min</div>
+                <div class="timeline-title">Bank of England</div>
+                <div class="timeline-description">
+                    Fundada en 1694, es el segundo banco central más antiguo del mundo. Se conoce como
+                    <strong>'The Old Lady of Threadneedle Street'</strong> y tiene su propia fuerza policial.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 1:18 PM · 8 min</div>
+                <div class="timeline-title">Leadenhall Market</div>
+                <div class="timeline-description">
+                    data日期：数据恢复时间。Uno de los mercados cubiertos más antiguos de Londres (desde 1321).
+                    Su estructura actual data de 1881 y fue set de filming para Harry Potter.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 1:38 PM · 20 min</div>
+                <div class="timeline-title">Tower of London</div>
+                <div class="timeline-description">
+                    Construida por Guillermo el Conquistador en 1066. Las <strong>Joyas de la Corona</strong> están custodiadas
+                    aquí desde 1303. Los cuervos son legendarios: siempren They'll vuelan, la corona caerá.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 1:43 PM · 5 min</div>
+                <div class="timeline-title">Tower Bridge</div>
+                <div class="timeline-description">
+                    A pesar de su aspecto medieval, fue construida entre 1886 y 1894. Se eleva aproximadamente
+                    1,000 veces al año para permitir el paso de barcos.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 2:00 PM · 15 min</div>
+                <div class="timeline-title">Garden at 120 (Opcional)</div>
+                <div class="timeline-description">
+                    Jardín público en la azotea (piso 20) con vistas 360°. <strong>GRATIS</strong> y sin reserva
+                    para grupos menores de 12 personas.
+                </div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <div class="callout-title">📊 Resumen de la Ruta</div>
+            <div class="callout-content">
+                <strong>Tiempo total de caminata:</strong> ~2 horas 30 minutos<br>
+                <strong>Distancia total:</strong> ~10.5 km<br>
+                <strong>16 paradas</strong> con datos curiosos e históricos en cada una
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Sábado Tarde y Noche</div>
+            <div class="header-subtitle">Opciones Post-Hotel</div>
+        </div>
+        <div class="page-number">Página 5</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">⛰️ Rascacielos Gratuitos</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Garden at 120</div>
+                <div class="info-card-content">
+                    📍 120 Fenchurch Street, EC3M 5BA<br>
+                    🕐 Abierto daily 8AM-6PM<br>
+                    💰 GRATIS · Sin reserva<br>
+                    <strong>Ventajas:</strong> Vistas 360°, sin reserva
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Sky Garden</div>
+                <div class="info-card-content">
+                    📍 20 Fenchurch Street, EC3M 8AF<br>
+                    🕐 Lun-Vie 8AM-1PM, finde 10AM-6PM<br>
+                    💰 GRATIS (reserva online obligatoria)<br>
+                    <strong>Ventajas:</strong> Jardines tropicales interiores
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Horizon 22</div>
+                <div class="info-card-content">
+                    📍 22 Bishopsgate, EC2M 4AJ<br>
+                    🕐 Mar-Sáb 8AM-9PM<br>
+                    💰 GRATIS (reserva online)<br>
+                    <strong>Ventajas:</strong> El rooftop gratuito más alto (piso 58)
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">One New Change</div>
+                <div class="info-card-content">
+                    📍 1 New Change, EC4M 9AF<br>
+                    🕐 Lun-Sáb 10AM-8PM, Dom 11AM-7PM<br>
+                    💰 GRATIS · Sin reserva<br>
+                    <strong>Ventajas:</strong> Vistas directas a St Paul's
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🍽️ Cenas Cercanas al Hotel (Stratford)</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">East Village (Stratford)</div>
+                <div class="info-card-content">
+                    Zona cerca del hotel con opciones económicas:<br>
+                    • Curry houses auténticos (£10-15)<br>
+                    • Fish & Chips (£8-12)<br>
+                    • Comida india/bangladesh
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Borough Market (Southwark)</div>
+                <div class="info-card-content">
+                    Mercado gastronómico bajo los arcos del puente de railway desde 1851.<br>
+                    • Comida callejera internacional<br>
+                    • Viernes y sábados más animados<br>
+                    • Mariscos frescos
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🎉 Eventos Especiales: 18-20 Abril</h2>
+
+        <div class="event-card">
+            <div class="event-name">🌍 Earth Day Weekender</div>
+            <div class="event-details">
+                📍 Somerset House<br>
+                📅 18-20 de Abril<br>
+                Programa de tres días explorando cuestiones ambientales a través del arte.
+                Incluye exhibiciones interactivas, talleres y performances.
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-name">🎵 Conciertos del Fin de Semana</div>
+            <div class="event-details">
+                • Barbican Centre: Programación classical y jazz<br>
+                • O2 Arena: Conciertos de artists internationals<br>
+                • Royal Albert Hall: Sunday Proms specials<br>
+                • Camden y Brixton: Live music alternativa
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Domingo 19 de Abril</div>
+            <div class="header-subtitle">Notting Hill, Portobello y Más</div>
+        </div>
+        <div class="page-number">Página 6</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">☀️ Mañana: Notting Hill y Portobello Market</h2>
+
+        <div class="image-container">
+            <img src="https://c8.alamy.com/comp/RA46MD/colorful-row-of-houses-on-portobello-road-notting-hill-london-great-britain-RA46MD.jpg" alt="Portobello Market">
+            <p class="image-caption">Portobello Road Market: el mercado de antigüedades más grande del mundo</p>
+        </div>
+
+        <p class="body-text">
+            <strong>Mejor hora:</strong> 10AM-1PM · <strong>Sábado es el día grande</strong> pero viernes también es excelente
+            con menos turistas.
+        </p>
+
+        <div class="fun-facts">
+            <div class="fun-facts-title">📚 Datos Curiosos</div>
+            <ul>
+                <li>Portobello Road Market es el <strong>mercado de antigüedades más grande del mundo</strong></li>
+                <li>Fue fundado en 1836 como 'Notting Hill Market', cambiado a Portobello en 1840</li>
+                <li>La película 'Notting Hill' (1999) fue filmada aquí con Hugh Grant y Julia Roberts</li>
+                <li>Las casas de colores pastel fueron pintadas en los años 80 para embellecer el barrio</li>
+            </ul>
+        </div>
+
+        <h3 class="subsection-subtitle">Almuerzo en Portobello</h3>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Electric Diner</div>
+                <div class="info-card-content">
+                    Hamburguesas gourmet en ambiente retro<br>
+                    💰 £10-15 por persona
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Portobello Market Stalls</div>
+                <div class="info-card-content">
+                    Roast beef sandwiches, pizza, sushi, falafel<br>
+                    💰 £5-10 por persona
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🌆 Tarde: Opciones</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Opción A: Camden Town</div>
+                <div class="info-card-content">
+                    <strong>Horario:</strong> 10AM-6PM (7PM sábados)<br>
+                    • Mercados alternativos únicos<br>
+                    • Street food de todo el mundo<br>
+                    • Amy Winehouse frequently homenajeada con street art
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Opción B: South Kensington</div>
+                <div class="info-card-content">
+                    <strong>Natural History Museum:</strong> GRATIS · 10AM-5:45PM<br>
+                    <strong>Science Museum:</strong> GRATIS · 10AM-6PM<br>
+                    <strong>V&A Museum:</strong> GRATIS · 10AM-5:45PM<br>
+                    Los tres en Exhibition Road, a 5 min caminando
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Opción C: Greenwich</div>
+                <div class="info-card-content">
+                    <strong>Royal Observatory:</strong> £18 adulto<br>
+                    <strong>Cutty Sark:</strong> £13 adulto<br>
+                    <strong>National Maritime Museum:</strong> GRATIS<br>
+                    Toma DLR o Uber Boat (~30 min desde Tower Hill)
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Opción D: Oxford Street</div>
+                <div class="info-card-content">
+                    Compras en las principales tiendas:<br>
+                    • Selfridges<br>
+                    • John Lewis<br>
+                    • Primark<br>
+                    • Liberty of London
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Lunes 20 de Abril</div>
+            <div class="header-subtitle">Día de Museos</div>
+        </div>
+        <div class="page-number">Página 7</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🏛️ Por Qué Ir el Lunes</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">📉 Menos Gente</div>
+                <div class="info-card-content">
+                    Los turistas tienden a usar el lunes para turismo activo al aire libre.
+                    Los museos estarán más vacíos.
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">🔄 Museos Refreshed</div>
+                <div class="info-card-content">
+                    Después del intenso finde, el personal ha tenido tiempo de reacondicionar las exhibiciones.
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">🕐 Ideal para Jet Lag</div>
+                <div class="info-card-content">
+                    Actividad cultural indoor es perfecta para ajustar tu reloj interno después del viaje.
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">🕓 Horarios Extended</div>
+                <div class="info-card-content">
+                    Algunos museos abren más tarde los viernes, pero el lunes tienes todo el día.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">📋 Museos Principales de Londres</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Museo</th>
+                    <th>Horario</th>
+                    <th>Precio</th>
+                    <th>Especialidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>British Museum</strong></td>
+                    <td>10AM-5PM</td>
+                    <td>GRATIS</td>
+                    <td>Historia mundial: Rosetta Stone, momias egipcias</td>
+                </tr>
+                <tr>
+                    <td><strong>National Gallery</strong></td>
+                    <td>10AM-6PM</td>
+                    <td>GRATIS</td>
+                    <td>Pintura europea: Turner, Van Gogh, Leonardo</td>
+                </tr>
+                <tr>
+                    <td><strong>Tate Modern</strong></td>
+                    <td>10AM-6PM</td>
+                    <td>GRATIS</td>
+                    <td>Arte moderno: Warhol, Hockney, exhibits temporales</td>
+                </tr>
+                <tr>
+                    <td><strong>Natural History</strong></td>
+                    <td>10AM-5:45PM</td>
+                    <td>GRATIS</td>
+                    <td>Ciencias naturales, dinosaurios, ballena azul</td>
+                </tr>
+                <tr>
+                    <td><strong>Victoria & Albert</strong></td>
+                    <td>10AM-5:45PM</td>
+                    <td>GRATIS</td>
+                    <td>Diseño y moda</td>
+                </tr>
+                <tr>
+                    <td><strong>Science Museum</strong></td>
+                    <td>10AM-6PM</td>
+                    <td>GRATIS</td>
+                    <td>Tecnología e innovación</td>
+                </tr>
+                <tr>
+                    <td><strong>Tate Britain</strong></td>
+                    <td>10AM-6PM</td>
+                    <td>GRATIS</td>
+                    <td>Arte británico desde 1500</td>
+                </tr>
+                <tr>
+                    <td><strong>Imperial War Museum</strong></td>
+                    <td>10AM-6PM</td>
+                    <td>GRATIS</td>
+                    <td>Historia militar siglo XX</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout">
+            <div class="callout-title">⭐ RECOMENDACIÓN</div>
+            <div class="callout-content">
+                <strong>British Museum</strong> es EL museo de Londres. Con más de <strong>8 millones de piezas</strong>,
+                necesitarías semanas para verlo todo. No te pierdas: Piedra Rosetta, Sala de las Momias,
+                frisbee de Salam (Partenón), Lewis Chessmen.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Lunes Noche: Hacia Oxford</div>
+            <div class="header-subtitle">Preparación para el Tren</div>
+        </div>
+        <div class="page-number">Página 8</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🚂 Tren a Oxford</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Horario del Tren</div>
+                <div class="info-card-content">
+                    <strong>Salida:</strong> London Paddington · 20:52<br>
+                    <strong>Llegada:</strong> Oxford · 21:52<br>
+                    <strong>Duración:</strong> ~1 hora<br>
+                    <strong> Recomendado:</strong> Llegar a Paddington a las 20:30
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Desde tu Hotel</div>
+                <div class="info-card-content">
+                    Tu hotel (Stratford) está bien conectado:<br>
+                    • Metro: Central line hasta Liverpool Street, luego Circle a Paddington (~35 min)<br>
+                    • Taxi/Uber: ~40-50 min según tráfico
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-subtitle">🍽️ Cenas Cercanas a Paddington</h3>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Marylebone / Connaught Village</div>
+                <div class="info-card-content">
+                    • <strong>The Grazing Goat:</strong> Gastro pub británico · £25-35<br>
+                    • <strong>Providores:</strong> Tapas de calidad<br>
+                    • <strong>The Silk Restaurant:</strong> Cocina asiática contemporánea
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Hyde Park / Queensway</div>
+                <div class="info-card-content">
+                    • <strong>Royal China:</strong> Dim sum legendario · ~£30<br>
+                    • <strong>Golders:</strong> Fish and chips de calidad · ~£15-20
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Southbank (con vistas)</div>
+                <div class="info-card-content">
+                    • <strong>Oxo Tower Restaurant:</strong> Cocina moderna con vistas al Thames<br>
+                    • <strong>Found Duke of York:</strong> Pubs con terraza junto al agua
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Soho (alternativa)</div>
+                <div class="info-card-content">
+                    • Múltiples opciones de todos los precios<br>
+                    • Cerca del metro de Tottenham Court Road<br>
+                    • Zona muy animada por la noche
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Guía de Oxford</div>
+            <div class="header-subtitle">Martes 21 - Jueves 23 de Abril</div>
+        </div>
+        <div class="page-number">Página 9</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🏛️ Bienvenidos a Oxford</h2>
+
+        <div class="image-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Oxford_Skyline_Panorama_from_St_Mary%27s_Church_-_Oct_2006.jpg/960px-Oxford_Skyline_Panorama_from_St_Mary%27s_Church_-_Oct_2006.jpg" alt="Oxford Skyline">
+            <p class="image-caption">Oxford: las 'Espiras Doradas' (Dreaming Spires) que inspiraron a poetas y escritores</p>
+        </div>
+
+        <p class="intro-text">
+            Oxford, conocida como <strong>'La Ciudad de las Espiras Doradas'</strong> (Dreaming Spires), es el hogar
+            de la universidad más antigua del mundo angloparlante. Fundada alrededor de 1096, esta ciudad combina
+            erudición, historia y belleza arquitectónica de manera única.
+        </p>
+
+        <div class="map-container">
+            <img src="/workspace/london_oxford_guide/images/oxford_map.png" alt="Mapa de Oxford">
+            <p class="image-caption">Lugares de interés en Oxford</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">📚 Historia de Oxford</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-title">Orígenes (siglos IX-XI)</div>
+                <div class="timeline-description">
+                    Oxford debe su existencia a su ubicación estratégica: una elevación natural sobre el río Cherwell.
+                    Los sajones establecieron un asentamiento aquí, y el nombre <strong>'Oxenaforda'</strong>
+                    (vado de los bueyes) refleja su función como punto de paso del ganado.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">Nacimiento de la Universidad (siglo XII)</div>
+                <div class="timeline-description">
+                    La tradición académica comenzó cuando estudiantes y profesores emigraron de París tras disturbios en 1167.
+                    Enrique II prohíbe a los estudiantes de Oxford estudiar en Francia, consolidando la institución.
+                    En 1248, el Rey Enrique III otorga la primera Carta Real.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">La Universidad se Organiza (siglos XIII-XV)</div>
+                <div class="timeline-description">
+                    Los primeros colleges se fundaron: University College (1249), Balliol (1263), Merton (1264).
+                    El sistema tutorial (tutorías personales) sigue siendo el corazón de la educación oxoniana.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">Oxford y la Reforma (siglo XVI)</div>
+                <div class="timeline-description">
+                    Durante la Reforma Inglesa, Oxford fue centro de intenso debate religioso. La Bodleian Library
+                    fue fundada en 1602 por Sir Thomas Bodley.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">Oxford Moderna</div>
+                <div class="timeline-description">
+                    Hoy, con <strong>39 colleges</strong> y más de 24,000 estudiantes, Oxford combina tradición con innovación.
+                    28 primeros ministros del Reino Unido, 72 premios Nobel y múltiples heads of state estudiaron aquí.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Martes 21 de Abril</div>
+            <div class="header-subtitle">Descubriendo Oxford</div>
+        </div>
+        <div class="page-number">Página 10</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">☀️ Mañana: El Centro Histórico</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 10:00 AM</div>
+                <div class="timeline-title">Radcliffe Camera y Bodleian Library</div>
+                <div class="timeline-description">
+                    La <strong>Radcliffe Camera</strong> es la biblioteca circular más fotografiada de Oxford (1737).
+                    Thomas Malton diseñó la fachada basada en el Panteón de Roma. El sótano contiene más de 200 km
+                    de estanterías.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 11:00 AM</div>
+                <div class="timeline-title">University Church of St Mary the Virgin</div>
+                <div class="timeline-description">
+                    Esta iglesia gótica del siglo XI ofrece la mejor vista de la Radcliffe Camera desde su torre (£5).
+                    Los mártires protestantes Cranmer, Latimer y Ridley fueron juzgados aquí en 1555.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 12:00 PM</div>
+                <div class="timeline-title">Christ Church College</div>
+                <div class="timeline-description">
+                    <strong>£16 adulto</strong> · Es el college más grande de Oxford y el único que incluye una catedral.
+                    La comedor (Dining Hall) inspiró la de Hogwarts en Harry Potter. El jardín es donde Lewis Carroll
+                    conoció a Alice Liddell.
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-subtitle">🍽️ Almuerzo en Oxford</h3>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Opciones Económicas (£10-20)</div>
+                <div class="info-card-content">
+                    • <strong>The Turleton Kitchen:</strong> Restaurante en el campus<br>
+                    • <strong>Quod:</strong> Bar y restaurante con terraza en Broad Street<br>
+                    • <strong>Oxford's Covered Market:</strong> Mercado cubierto Victorian (desde 1774)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🌆 Tarde: Los Colleges del Centro</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 2:00 PM</div>
+                <div class="timeline-title">Trinity College</div>
+                <div class="timeline-description">
+                    Uno de los colleges más bonitos (£8 entrada). <strong>C.S. Lewis</strong> fue Fellow aquí y escribió
+                    'Las Crónicas de Narnia'. El jardín de Fellows tiene el árbol más antiguo plantado en un college.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 3:30 PM</div>
+                <div class="timeline-title">Balliol College</div>
+                <div class="timeline-description">
+                    El college más antiguo de Oxford, fundado en 1263. Generales como el Mariscal de Campo Rommel
+                    estudiaron aquí. <strong>Samuel Johnson</strong>, autor del primer diccionario de inglés, fue alumno.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 4:30 PM</div>
+                <div class="timeline-title">Exeter College</div>
+                <div class="timeline-description">
+                    (£5 entrada). <strong>J.R.R. Tolkien</strong> fue Fellow aquí y el estilo gótico influyó en su escritura.
+                    La torre quadrangle es una de las más fotografiadas de Oxford.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Martes Noche</div>
+            <div class="header-subtitle">Pubs Literarios</div>
+        </div>
+        <div class="page-number">Página 11</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🍺 Pubs Imprescindibles</h2>
+
+        <div class="image-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/The_Eagle_and_Child.jpg" alt="The Eagle and Child">
+            <p class="image-caption">The Eagle and Child: donde Tolkien leyó El Señor de los Anillos por primera vez</p>
+        </div>
+
+        <div class="pubs-grid">
+            <div class="pub-card">
+                <div class="pub-name">🍺 The Eagle and Child</div>
+                <div class="pub-location">49 St Giles', Oxford</div>
+                <div class="pub-description">
+                    El <strong>pub literario más famoso</strong> de Oxford. Aquí se reunían los <strong>Inklings</strong>:
+                    C.S. Lewis, J.R.R. Tolkien y Charles Williams. Tolkien leyó por primera vez capítulos de
+                    'El Señor de los Anillos' a sus amigos aquí. £8-15 por persona.
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-name">🍺 The Bear Inn</div>
+                <div class="pub-location">6 Broad Street, Oxford</div>
+                <div class="pub-description">
+                    <strong>Desde 1242</strong> - posiblemente el pub más antiguo de Oxford. Buenas ales y comida casera.
+                    Ambiente tradicional histórico. £12-20 por persona.
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-name">🍺 The Turf Tavern</div>
+                <div class="pub-location">4 Bath Place, Oxford</div>
+                <div class="pub-description">
+                    Pub medieval en un callejón. Muy auténtico pero <strong>difícil de encontrar</strong>.
+                    Cerveza de barril local. Hidden gem popular entre estudiantes. £10-18 por persona.
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-name">🍺 The Angel & Crown</div>
+                <div class="pub-location">6-8 High Street, Oxford</div>
+                <div class="pub-description">
+                    Pub del siglo XVI cerca de Christ Church. Buena selección de cervezas y whiskeys.
+                    Ubicación central perfecta para después de explorar.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">📚 Personajes Famosos de Oxford</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">🏛️ Política</div>
+                <div class="info-card-content">
+                    • 28 Primeros Ministros británicos<br>
+                    • Bill Clinton<br>
+                    • Indira Gandhi<br>
+                    • Margaret Thatcher (Somerville)
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">📖 Literatura</div>
+                <div class="info-card-content">
+                    • J.R.R. Tolkien (Exeter/Trinity)<br>
+                    • C.S. Lewis (Trinity)<br>
+                    • Lewis Carroll (Christ Church)<br>
+                    • Oscar Wilde
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">🔬 Ciencia</div>
+                <div class="info-card-content">
+                    • Albert Einstein (Christ Church)<br>
+                    • Stephen Hawking (University)<br>
+                    • Tim Berners-Lee (Oxford)<br>
+                    • 72 premios Nobel
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">🎬 Cine y TV</div>
+                <div class="info-card-content">
+                    • Hugh Grant (New College)<br>
+                    • Emma Thompson (Oxford)<br>
+                    • Rowan Atkinson (Oxford)<br>
+                    • Michael Palin (Oxford)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Miércoles 22 de Abril</div>
+            <div class="header-subtitle">Oxford Profundo</div>
+        </div>
+        <div class="page-number">Página 12</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🏛️ Mañana: Museos</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">🖼️ Ashmolean Museum</div>
+                <div class="info-card-content">
+                    <strong>Horario:</strong> Mar-Dom 10AM-5PM · GRATIS<br>
+                    El museo más antiguo de Reino Unido, fundado en 1683.<br>
+                    Colecciones de arte y antigüedades de todo el mundo.<br>
+                    Incluye trabajos de Miguel Ángel, Da Vinci, Picasso.
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">🌍 Pitt Rivers Museum</div>
+                <div class="info-card-content">
+                    <strong>Horario:</strong> Mar-Dom 10AM-4:30PM · GRATIS<br>
+                    Museo antropológico único con 500,000+ objetos.<br>
+                    Exhibiciones organizadas por tema (música, armas, textiles).<br>
+                    Excelente para familias con niños.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🌳 Tarde: Colleges del Norte</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 2:00 PM</div>
+                <div class="timeline-title">Worcester College</div>
+                <div class="timeline-description">
+                    £6 entrada. Uno de los colleges más verdes con amplios jardines y un lago.
+                    Los jardines incluyen un huerto de lúpulo y un lago con patos.
+                    La biblioteca data de 1613.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 3:30 PM</div>
+                <div class="timeline-title">Somerville College</div>
+                <div class="timeline-description">
+                    GRATIS (donation apreciada). College fundado en 1879 para mujeres, ahora mixto.
+                    Margaret Thatcher fue estudiante aquí. El jardín de Margaret Thatcher tiene rosas y lavanda.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 4:30 PM</div>
+                <div class="timeline-title">Lady Margaret Hall</div>
+                <div class="timeline-description">
+                    College vecino a Somerville, fundado en 1878. Buenas vistas del río y punts desde su jardín.
+                    Tolkien fue Fellow aquí. North Gardens abierto al público.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🚣 Actividades Tarde/Noche</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Punting en el Cherwell</div>
+                <div class="info-card-content">
+                    £20-25 por hora para dos personas.<br>
+                    <strong>Magdalen Bridge Boathouse:</strong> El más famous, abierto todo el año.<br>
+                    El río pasa junto a colleges con jardines como Christ Church Meadows.
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Eventos Culturales</div>
+                <div class="info-card-content">
+                    • <strong>Sheldonian Theatre:</strong> Conciertos en el teatro diseñado por Wren<br>
+                    • <strong>Oxford Playhouse:</strong> Obras contemporáneas<br>
+                    • <strong>Modern Art Oxford:</strong> Arte contemporáneo, GRATIS
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Jueves 23 de Abril</div>
+            <div class="header-subtitle">Despedida de Oxford</div>
+        </div>
+        <div class="page-number">Página 13</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🏰 Mañana: Lo Esencial</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 9:00 AM</div>
+                <div class="timeline-title">Oxford Castle & Prison</div>
+                <div class="timeline-description">
+                    £18 adulto. Mezcla de historia medieval y victoriana. Puedes escalar el
+                    <strong>Saxon St George's Tower</strong> (450 años). Tours guiados revelan la historia de la prisión victoriana.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-time">🕐 10:30 AM</div>
+                <div class="timeline-title">Última Mirada a la Universidad</div>
+                <div class="timeline-description">
+                    Si no visitaron college ayer, aprovecha la mañana para ver:<br>
+                    • <strong>New College:</strong> Fundado en 1379, uno de los más antiguos<br>
+                    • <strong>Magdalen College:</strong> El más prestigious, con canto del coro en Mayo<br>
+                    • <strong>All Souls:</strong> College sin undergraduates - solo 2 fellows al año
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🍽️ Almuerzo de Despedida</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Opciones Cercanas a la Estación</div>
+                <div class="info-card-content">
+                    • <strong>The Head of the River:</strong> Pub junto al Támesis<br>
+                    • <strong>The Folly:</strong> Restaurante en el río con vistas a Oxford<br>
+                    • <strong>Café L'Ecoco:</strong> Pastelería francesa para croissant y café
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="callout">
+        <div class="callout-title">🚂 Recordatorio del Tren</div>
+        <div class="callout-content">
+            Hay servicios directos a <strong>London Paddington</strong> (1 hora), <strong>London Marylebone</strong> (1 hora),
+            y otros destinos. Asegúrate de llegar 15 minutos antes de la salida.
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Guía de Pubs</div>
+            <div class="header-subtitle">Londres y Oxford</div>
+        </div>
+        <div class="page-number">Página 14</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🍺 Mejores Wetherspoons de Londres</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Pub</th>
+                    <th>Ubicación</th>
+                    <th>Especialidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>The Greenwood</td>
+                    <td>Kingsway</td>
+                    <td>El único Wetherspoon con hotel</td>
+                </tr>
+                <tr>
+                    <td>The Sir John Soane</td>
+                    <td>Lincoln's Inn Fields</td>
+                    <td>Edificio histórico de Sir John Soane</td>
+                </tr>
+                <tr>
+                    <td>The Fox on the Hill</td>
+                    <td>Camberwell</td>
+                    <td>Jardín de cerveza popular</td>
+                </tr>
+                <tr>
+                    <td>Justice Mill Lane</td>
+                    <td>Bloomsbury</td>
+                    <td>Cerveza económica en el centro</td>
+                </tr>
+                <tr>
+                    <td>The代表的 Bull</td>
+                    <td>Camden</td>
+                    <td>Uno de los mejores de Londres</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🏠 Pubs Históricos de Londres</h2>
+
+        <div class="pubs-grid">
+            <div class="pub-card">
+                <div class="pub-name">🍺 Ye Olde Cheshire Cheese</div>
+                <div class="pub-location">Fleet Street</div>
+                <div class="pub-description">
+                    Reconstruido en 1667. Favorito de <strong>Dickens y Samuel Johnson</strong>.
+                    Uno de los pubs más antiguos de Londres con suasana bersejarah.
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-name">🍺 The George Inn</div>
+                <div class="pub-location">Southwark</div>
+                <div class="pub-description">
+                    El último coaching inn de Londres (solo la estructura).
+                    Patrimonio Nacional lo gestiona. Ambiente histórico único.
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-name">🍺 The Prospect of Whitby</div>
+                <div class="pub-location">Wapping</div>
+                <div class="pub-description">
+                    <strong>Desde 1520</strong> - el pub más antiguo del puerto de Londres.
+                    Vista al Támesis desde la barra.
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-name">🍺 The Old Chocolate Factory</div>
+                <div class="pub-location">Covent Garden</div>
+                <div class="pub-description">
+                    Antigua fábrica de chocolate de Guillermo III.
+                    Ambiente victoriano bien conservado.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🎵 Pubs con Música en Vivo</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Pubs Musicales</div>
+                <div class="info-card-content">
+                    • <strong>The Devonshire Arms:</strong> Piano singalongs cada noche<br>
+                    • <strong>The Spice of Life:</strong> Live music nightly en Soho<br>
+                    • <strong>The Intrepid Fox:</strong> Rock and metal en Camden<br>
+                    • <strong>The Blues Bar:</strong> Blues live en Camden
+                </div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <div class="callout-title">💰 Tip de Ahorro</div>
+            <div class="callout-content">
+                En Reino Unido, los pubs fuera de las horas pico (2-5 PM) ofrecen <strong>'happy hour'</strong> con descuentos.
+                El <strong>Sunday roast (£8-15)</strong> en pubs tradicionales es una comida completa y económica.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page page-break">
+    <div class="header">
+        <div>
+            <div class="header-title">Información Práctica</div>
+            <div class="header-subtitle">Todo lo que Necesitas Saber</div>
+        </div>
+        <div class="page-number">Página 15</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🚇 Transporte en Londres</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Costo</th>
+                    <th>Notas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Metro (Tube)</td>
+                    <td>£2.70-3.50 por viaje</td>
+                    <td>Oyster card o contactless</td>
+                </tr>
+                <tr>
+                    <td>Metro daily máximo</td>
+                    <td>£7.70 zona 1-2</td>
+                    <td>Daily cap - viajes ilimitados</td>
+                </tr>
+                <tr>
+                    <td>Autobús</td>
+                    <td>£1.75 por viaje</td>
+                    <td>Solo contactless, no cash</td>
+                </tr>
+                <tr>
+                    <td>Uber / Taxi negro</td>
+                    <td>£15-30 por trayecto corto</td>
+                    <td>Uber usualmente más barato</td>
+                </tr>
+                <tr>
+                    <td>DLR (Tren ligero)</td>
+                    <td>Igual que metro</td>
+                    <td>Para Canary Wharf, Greenwich</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">⏰ Horarios Importantes</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Metro</div>
+                <div class="info-card-content">
+                    5AM-12:30AM (varía por línea)<br>
+                    Night Tube: Viernes y sábados en algunas líneas
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Bancos</div>
+                <div class="info-card-content">
+                    Lunes-Viernes 9AM-5PM<br>
+                    Muchos cierran a las 4PM
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Tiendas</div>
+                <div class="info-card-content">
+                    9AM-6PM<br>
+                    Jueves late night hasta 8PM<br>
+                    Domingos 11AM-5PM
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Restaurantes</div>
+                <div class="info-card-content">
+                    Almuerzo: 12-3PM<br>
+                    Cena: 6-10PM
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🔗 Enlaces Útiles</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-card-title">Transporte</div>
+                <div class="info-card-content">
+                    • tfl.gov.uk<br>
+                    • nationalrail.co.uk
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Eventos</div>
+                <div class="info-card-content">
+                    • visitlondon.com<br>
+                    • timeout.com/london<br>
+                    • songkick.com/london
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Turismo</div>
+                <div class="info-card-content">
+                    • visitoxford.com<br>
+                    • hrp.org.uk/tower-of-london<br>
+                    • britishmuseum.org<br>
+                    • gwr.com (trenes a Oxford)
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-title">Museos</div>
+                <div class="info-card-content">
+                    • nhm.ac.uk (Natural History)<br>
+                    • science museum.org.uk<br>
+                    • vam.ac.uk (V&A)<br>
+                    • tate.org.uk
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BACK COVER -->
+<div class="cover" style="min-height: auto; padding: 100px 60px;">
+    <div class="cover-gold-line"></div>
+
+    <div class="cover-content">
+        <h1 class="cover-title" style="font-size: 48px;">
+            <span>¡Buen</span> Viaje!
+        </h1>
+
+        <div class="cover-divider"></div>
+
+        <div class="cover-author" style="position: relative; bottom: auto; left: auto; transform: none;">
+            <div class="cover-author-label">Viaje Preparado por</div>
+            <div class="cover-author-name">Antonio Lobo Santos</div>
+            <div class="cover-family">Familia Lobo Santos · Abril 2026</div>
+        </div>
+
+        <div style="margin-top: 60px; color: rgba(255,255,255,0.7); font-size: 14px;">
+            <p>🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧🇬🇧</p>
+            <p style="margin-top: 20px;">Londres · Oxford · Abril 2026</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
